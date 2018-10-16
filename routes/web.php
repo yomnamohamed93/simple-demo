@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProductsController@index');
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
+
+Route::resource('products','ProductsController');
